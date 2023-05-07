@@ -1,22 +1,38 @@
-class Registration {
-    private  
-        String CustName;
-        String Email;
-        String Password;
-        String Phone;
-        String Address; 
+import java.util.Scanner;
 
-    public    
-        Registration( String PW, String N, String A, String E, String P){
-            Password = PW;
-            CustName = N;
-            Address = A;
-            Email = E;
-            Phone = P;         
+class Registration extends UserData{
+    private  
+        String phone;
+        String address; 
+
+    public 
+        //constructor
+        Registration( String n, String e, String pw, String a, String p){        
+            suber(n, e, pw);
+            Address = a;
+            Phone = p;         
+        }
+    
+         // default constructor
+        Registration() {
+            super("", "", "");
+            phone = "";
+            address = "";
         }
 
+
         void register(){
-            // will be updated
+              try (Scanner input = new Scanner(System.in)) {
+                System.out.println("Plaese enter your personal data.");
+                System.out.print("Name: ");
+                setCustName(input.nextLine());
+
+                System.out.print("Phone: ");
+                setPhone(input.nextLine());
+
+                System.out.print("Address: ");
+                setAddress(input.nextLine());
+            }
         }
         
         void enter_strong_password(){

@@ -1,5 +1,5 @@
 import java.io.File;
-import java.io.File;
+import java.util.Scanner;
 
 class Login extends UserData {
 
@@ -29,18 +29,24 @@ class Login extends UserData {
                 if (!searchForPw(getPassword()) && (!r1.searchForEmail(getEmail()))) {
                     System.out.println("Invalid email and password.");
                     CountLogin--;
-                } else if (!searchForPw(getPassword()) && r1.searchForEmail(getEmail())) {
+                } 
+                else if (!searchForPw(getPassword()) && r1.searchForEmail(getEmail())) {
                     System.out.println("Invalid password.");
 
                     CountLogin--;
-                } else if (searchForPw(getPassword()) && (!r1.searchForEmail(getEmail()))) {
+                } 
+                else if (searchForPw(getPassword()) && (!r1.searchForEmail(getEmail()))) {
                     System.out.println("Invalid email or password.");
-                    System.out.println("Your denied accses to the system.");
                     CountLogin--;
-                    if (CountLogin == 2) {
-                        System.out.println("--> Note:you have 3 trial to try passsword after that you will denied.");
-                    }
-                } else {
+                }
+                if (CountLogin < 2) {
+                    System.out.println("--> Note:you have 3 trials to tryto enter your email & passsword, after that you will be denied access to the system.");
+                }
+                if (CountLogin < 1) {
+                    System.out.println("Invalid email or password.");
+                    System.out.println("Your denied access to the system.");
+                }
+                else {
                     System.out.println("Successfull Login ^_^");
                     break;
                 }

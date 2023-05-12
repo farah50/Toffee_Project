@@ -159,14 +159,14 @@ class Registration extends UserData{
                 try {
                     FileWriter writer = new FileWriter("information.txt", true);
                     writer.write(getName() + "|" + getPhone() + "|" + getAddress() + "|" + getEmail() + "|" + getPassword()
-                            + "\n"); // write method used to write the String on the file
+                            + "\n");                       // write method used to write the String on the file
                     writer.close();
                     System.out.println("registered successfully ^_^");
                 }
 
-                catch (Exception e) { // catch allows u to define a block of code to be executed, if an error occurs
-                                      // in the try block.
-                    e.printStackTrace(); // tool used to handle exceptions and errors
+                catch (Exception e) {                     // catch allows u to define a block of code to be executed, if an error occurs in the try block.
+                                      
+                    e.printStackTrace();                  // tool used to handle exceptions and errors
                 }
 
                 input.close();

@@ -58,15 +58,13 @@ class Registration extends UserData{
                    System.out.print("Name: ");
                    setCustName(input.nextLine());
 
-                   System.out.print("Phone: ");
-                   setPhone(input.nextLine());
-
                    System.out.print("Address: ");
                    setAddress(input.nextLine());
                    
                    boolean validPhone;
                    boolean validEmail;
                    boolean emailExists;
+                   boolean strongPw;
                   
                    do {
                         System.out.print("Phone: ");
@@ -80,6 +78,7 @@ class Registration extends UserData{
                         }
 
                   } while (!validPhone);
+                  
                   
                    do {
                         System.out.print("E-mail: ");
@@ -98,9 +97,28 @@ class Registration extends UserData{
                              System.out.println("This email already exists, please enter another email.");
                         }
                     } while (!validEmail || emailExists);
-                     
-                    System.out.print("Password: ");
-                    setPassword(input.nextLine());
+                  
+                  
+                    do {
+                        System.out.print("Password: ");
+                        setPassword(input.nextLine());
+
+                        String pw = getPassword();
+                        strongPw = check_strong_password();
+
+                        if (pw.length() < 8) {
+                            System.out.println("Too short password, please try aagain!");
+                        } 
+                        else {
+                            if (!strongPw) {
+
+                                System.out.println("--> Invalid password, please try again!");
+                                System.out.println("It must be 8 characters or more");
+                                System.out.println("include letters in upper and lower cases , special characters and digits.");
+                            }
+                        }
+
+                    } while (!strongPw);
 
                     // save user data to file
                     saveUserData();
@@ -144,8 +162,24 @@ class Registration extends UserData{
         }
 
         
-        void enter_strong_password(){
-            // will be updated
+        // method to check the password strength
+        boolean check_strong_password(){
+            String upperCase = ".*[A-Z].*";
+            String lowerCase = ".*[a-z].*";
+            String numberCase = ".*[0-9].*";
+            String specialChar = ".*[@!?@$#&%^*:]+.*";
+
+            Pattern regix1 = Pattern.compile(upperCase);
+            Pattern regix2 = Pattern.compile(lowerCase);
+            Pattern regix3 = Pattern.compile(numberCase);
+            Pattern regix4 = Pattern.compile(specialChar);
+
+            Matcher regix1Match1 = regix1.matcher(getPassword());
+            Matcher regix1Match2 = regix2.matcher(getPassword());
+            Matcher regix1Match3 = regix3.matcher(getPassword());
+            Matcher regix1Match4 = regix4.matcher(getPassword());
+
+            return regix1Match1.matches() && regix1Match2.matches() && regix1Match3.matches() && regix1Match4.matches();
         }
     
         void XOR_encrypt_pw(){
@@ -175,35 +209,4 @@ class Registration extends UserData{
     
 
 }
-
-
-class Login{
-    private 
-        String Email;
-        String Password;
-    
-    public
-        Login(String Pw, String E){
-            Password = Pw;
-            Email = E;    
-        }
-
-        boolean search_for_pw(){
-            // will be updated
-        }
-
-        boolean search_for_email(){
-            // will be updated
-        }
-
-        void change_pw(){
-            // will be updated if there is a time
-        }
-
-        String pring_CustName(){
-            // will be updated if there is a time
-        }
-
-}
-
 

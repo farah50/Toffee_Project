@@ -63,9 +63,23 @@ class Registration extends UserData{
 
                    System.out.print("Address: ");
                    setAddress(input.nextLine());
-                  
+                   
+                   boolean validPhone;
                    boolean validEmail;
                    boolean emailExists;
+                  
+                   do {
+                        System.out.print("Phone: ");
+                        setPhone(input.nextLine());
+
+                        // check if the Phone number is valid
+                        validPhone = valid_phone();
+
+                        if (!validPhone) {
+                            System.out.println("Invalid Phone number, please try again.");
+                        }
+
+                  } while (!validPhone);
                   
                    do {
                         System.out.print("E-mail: ");
@@ -101,6 +115,14 @@ class Registration extends UserData{
             return regexMatch.matches();
        }
     
+      // method to validate Phone number
+       boolean valid_phone() {
+            String pattern = "^(2)?(01){1}[0-9]{9}$";
+            Pattern regex = Pattern.compile(pattern);
+            Matcher regexMatch = regex.matcher(getPhone());
+            return regexMatch.matches();
+       }
+    
     
         // method to search for an email address in the file
         public boolean searchForEmail(String email) {
@@ -122,10 +144,6 @@ class Registration extends UserData{
         }
 
         
-        void valid_phone() {
-             // will be updated
-        }
-    
         void enter_strong_password(){
             // will be updated
         }

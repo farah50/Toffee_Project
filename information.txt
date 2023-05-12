@@ -1,0 +1,11 @@
+Name|Address|Phone|Email|Password
+nour|Giza|01123456789|nour123@gmail.com|Abcd1234!?#
+alaa|cairo|01245896752|ali.mo@yahoo.com|vhjBG?%125!
+Ahmed|alex|01569842611|Ahmed526@gmail.com|ykgyAW54^&
+mariam|portsaid|01148552336|mory15@gmail.com|mmAWE145!!15
+mary|giza|01244787631|mary111@gmail.com|lji345??ASFS
+karam|luxor|01154455562|k.nader@gmail.com|154AERSaewa?!
+
+
+
+

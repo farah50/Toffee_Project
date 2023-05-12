@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         
@@ -26,7 +28,7 @@ public class Main {
                     Login L1 = new Login();
                     L1.login();
                     break;
-                case "3":
+                case "5":
                     System.out.println("Exiting program...");
                     input.close();
                     System.exit(0);

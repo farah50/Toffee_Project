@@ -119,6 +119,15 @@ class Registration extends UserData{
                         }
 
                     } while (!strongPw);
+                  
+                    System.out.print("Confirm password: ");
+                    confirm = input.nextLine();
+
+                    while (!confirm.equals(getPassword())) {
+                        System.out.println("Please confirm the password you have entered correctly.");
+                        System.out.print("Confirm password: ");
+                        confirm = input.nextLine();
+                    }
 
                     // save user data to file
                     saveUserData();

@@ -15,13 +15,13 @@ public class Order {
 
     //This function is to creatiing an order.
     public void createOrder() throws IOException {
-        System.out.println("Order creation, please choose your items");
+        System.out.println("--> Order creation, please choose your items");
         c.viewCatalog();
         addItemsToShoppingCart();
-        System.out.println("Your total cost is = " + getTotalCost());
+        System.out.println("--> Your total cost is = " + getTotalCost());
     }
     public void addItemsToShoppingCart(){
-        System.out.println("How many items do you want to buy ");
+        System.out.println("--> How many items do you want to buy ");
         int items;
         items = in.nextInt();
         System.out.println("Please insert their IDS");
@@ -35,7 +35,7 @@ public class Order {
                 } else if (ID == 2) {
                     Total_Cost += 300;
                 } else if (ID == 3) {
-                    Total_Cost += 250;
+                    Total_Cost += 200;
                 } else if (ID == 4) {
                     Total_Cost += 500;
                 }else System.out.println("Invalid ID");

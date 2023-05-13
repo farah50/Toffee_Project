@@ -23,10 +23,6 @@ public class Main {
                 case "1":
                     Registration r1 = new Registration();
                     r1.register();
-                    String recipientEmail = r1.getEmail();
-                    int otp = (int) (Math.random() * 900000 + 100000);
-                    EmailSender.sendOTP(recipientEmail, Integer.toString(otp));
-                    System.out.println("OTP sent to " + recipientEmail);
                     System.out.println("--> registered successfully ^_^");
                     break;
                 case "2":

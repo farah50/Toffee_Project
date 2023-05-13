@@ -28,20 +28,31 @@ public class Main {
                  Verification v1 = new Verification();
                  System.out.println(v1.OTP(email, length));
                  System.out.println("--> registered successfully ^_^");
+                 main(args);
+                 break;
              case "2":
                  Login L1 = new Login();
                  L1.login();
+                 main(args);
+                 break;
              case "3":
                  Catalog c1 = new Catalog();
                  c1.viewCatalog();
+                 main(args);
+                 break;
              case "4":
                  o.createOrder();
+                 main(args);
+                 break;
              case "5":
                  System.out.println("Exiting program...");
                  input.close();
                  System.exit(0);
+                 main(args);
+                 break;
              default:
                  System.out.println("Invalid choice, please try again.");
+                 main(args);
                  break;
          }
     }

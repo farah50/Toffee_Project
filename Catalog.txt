@@ -1,0 +1,5 @@
+ID:     Item:              Price: 
+1       Chocolate Cake     250.00 L.E. 
+2       Red velvet Cake    300.00 L.E. 
+3       Strawberry Cake    200.00 L.E. 
+4       Galaxy Cake        500.00 L.E. 

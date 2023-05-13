@@ -3,18 +3,18 @@ import java.util.Scanner;
 
 class Login extends UserData {
 
-    public
 
-    Registration r1 = new Registration();
+    public Registration r1 = new Registration();
+    public Login(){
+    }
 
-    Login(String e, String pw) {
+    public Login(String e, String pw) {
         super(e, pw);
     }
 
-    public Login() {
-    }
+    //public Login(){}
 
-    void login() {
+    public void login() {
         int CountLogin = 3;
 
         try (Scanner input = new Scanner(System.in)) {
@@ -29,12 +29,12 @@ class Login extends UserData {
                 if (!searchForPw(getPassword()) && (!r1.searchForEmail(getEmail()))) {
                     System.out.println("Invalid email and password.");
                     CountLogin--;
-                } 
+                }
                 else if (!searchForPw(getPassword()) && r1.searchForEmail(getEmail())) {
                     System.out.println("Invalid password.");
 
                     CountLogin--;
-                } 
+                }
                 else if (searchForPw(getPassword()) && (!r1.searchForEmail(getEmail()))) {
                     System.out.println("Invalid email or password.");
                     CountLogin--;
@@ -56,7 +56,7 @@ class Login extends UserData {
     }
 
     // method to search for the password in the file
-    boolean searchForPw(String pw) {
+    public boolean searchForPw(String pw) {
         try {
             Scanner scanner = new Scanner(new File("information.txt"));
             while (scanner.hasNextLine()) {
@@ -76,7 +76,7 @@ class Login extends UserData {
 
     // unimplemented method
     @Override
-    void saveUserData() {
+    public void saveUserData() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'saveUserData'");
     }

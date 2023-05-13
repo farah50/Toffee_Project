@@ -6,8 +6,6 @@ public class Main {
         Scanner input = new Scanner(System.in);
         String choice;
 
-        
-        while (true) {
             System.out.println("----------------welcom-----------------");
             System.out.println("choose what you want from the menue");
             System.out.println("1- Registration");
@@ -23,6 +21,11 @@ public class Main {
                 case "1":
                     Registration r1 = new Registration();
                     r1.register();
+                    
+                    int length = 4;
+                    String email = r1.getEmail();
+                    Verification v1 = new Verification();
+                    System.out.println(v1.OTP(email, length));
                     System.out.println("--> registered successfully ^_^");
                     break;
                 case "2":
@@ -32,6 +35,9 @@ public class Main {
                 case "3":
                     Catalog c1 = new Catalog();
                     c1.viewCatalog();
+                    break;
+                case "4":
+                   break;
                 case "5":
                     System.out.println("Exiting program...");
                     input.close();
@@ -41,6 +47,5 @@ public class Main {
                     System.out.println("Invalid choice, please try again.");
                     break;
             }
-        }
     }
 } 

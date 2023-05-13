@@ -28,6 +28,9 @@ public class Main {
                     Login L1 = new Login();
                     L1.login();
                     break;
+                case "3":
+                    Catalog c1 = new Catalog();
+                    c1.viewCatalog();
                 case "5":
                     System.out.println("Exiting program...");
                     input.close();

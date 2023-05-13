@@ -1,29 +1,26 @@
 abstract class UserData {
-    private
 
     String email;
     String password;
 
-    public
-
-    UserData( String e, String pw) {
+    public UserData( String e, String pw) {
     }
 
-    abstract void saveUserData();
+    public abstract void saveUserData();
 
-    void setEmail(String e) {
+    public void setEmail(String e) {
         email = e;
     }
 
-    String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    void setPassword(String pw) {
+    public void setPassword(String pw) {
         password = pw;
     }
 
-    String getPassword() {
+    public String getPassword() {
         return password;
     }
 }

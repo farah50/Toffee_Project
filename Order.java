@@ -7,6 +7,7 @@ public class Order {
     private String Phone_Number;
     private int Loyalty_points;
     private float Total_Cost = 0;
+    
     public Scanner in = new Scanner(System.in);
     public Catalog c = new Catalog();
 
@@ -38,7 +39,9 @@ public class Order {
                     Total_Cost += 200;
                 } else if (ID == 4) {
                     Total_Cost += 500;
-                }else System.out.println("Invalid ID");
+                }else if (ID == 5) {
+                    Total_Cost += 20;
+                else System.out.println("Invalid ID");
 
             }
         }
@@ -51,6 +54,8 @@ public class Order {
                 System.out.println("ID is: " + ShoppingCart[i] + " Strawberry Cake");
             } else if (ShoppingCart[i] == 4) {
                 System.out.println("ID is: " + ShoppingCart[i] + " Galaxy Cake");
+            }else if (ShoppingCart[i] == 5) {
+                System.out.println("ID is: " + ShoppingCart[i] + " Candy cotton");
             }else System.out.println("Invalid ID");
         }
     }

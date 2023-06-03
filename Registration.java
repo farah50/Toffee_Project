@@ -4,10 +4,11 @@ import java.io.File;
 import java.io.FileWriter;
 
 class Registration extends UserData{
-    String name;
-    String phone;
-    String address;
-    String confirm;
+    private
+        String name;
+        String phone;
+        String address;
+        String confirm;
         //constructor
     public Registration( String e, String pw, String n, String a, String p){
         super(e,pw);
@@ -55,7 +56,7 @@ class Registration extends UserData{
         try (Scanner input = new Scanner(System.in)) {
             System.out.println("Plaese enter your personal data.");
             System.out.print("Name: ");
-            setCustName(input.nextLine());
+            setName(input.nextLine());
 
             System.out.print("Address: ");
             setAddress(input.nextLine());
@@ -64,6 +65,7 @@ class Registration extends UserData{
             boolean validEmail;
             boolean emailExists;
             boolean strongPw;
+            String confirm;
 
             do {
                 System.out.print("Phone: ");
@@ -133,8 +135,6 @@ class Registration extends UserData{
         }
     }
 
-    public void setCustName(String s) {
-    }
 
     // method to validate email address
     public boolean validEmail() {
@@ -193,11 +193,6 @@ class Registration extends UserData{
         return regix1Match1.matches() && regix1Match2.matches() && regix1Match3.matches() && regix1Match4.matches();
     }
 
-    public void XOR_encrypt_pw(){
-        // will be updated
-    }
-
-
     @Override
     public void saveUserData() {
         try (Scanner input = new Scanner(System.in)) {
@@ -216,6 +211,25 @@ class Registration extends UserData{
 
             input.close();
         }
+    }
+    
+    void call_regesteration_OTP() {
+        register();
+        Boolean x = true;
+        while (x) {
+            String email = getEmail();
+            Verification v1 = new Verification();
+            String OTP = v1.sendOtpToEmail(email);
+
+            if (v1.Valid_OTP(OTP)) {
+                System.out.println("succrssfull verification!");
+                x = false;
+            } else {
+                System.out.println("invalid OTP");
+
+            }
+        }
+        System.out.println("--> registered successfully ^_^");
     }
 
 
